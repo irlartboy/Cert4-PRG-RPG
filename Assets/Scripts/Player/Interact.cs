@@ -15,7 +15,7 @@ public class Interact : MonoBehaviour
     private void Update()
     {
         //if our interact key is pressed
-        if (Input.GetButtonDown("Interact"))
+        if (Input.GetKeyDown("e"))
         {
             //create a ray
             Ray interact;

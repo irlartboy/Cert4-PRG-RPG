@@ -30,10 +30,10 @@ public class Player : MonoBehaviour
    public void LoadData()
     {
         Data data = Save.LoadData();
-        level = data.level;
-        name = data.playerName;
+        //level = data.level;
+        // name = data.playerName;
         // health = data.health;
-        maxHealth = data.maxHp;
+        // maxHealth = data.maxHp;
         health.maxHealth = maxHealth;
         curHealth = data.curHp;
         health.curHealth = curHealth;

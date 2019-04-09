@@ -10,7 +10,7 @@ public class CheckPoint : MonoBehaviour
     public Transform curCheckPoint;
     //transform for our currentCheck
     [Header("Character Health")]
-    public DelayedHealthBar health;
+    public PlayerStats health;
     //character Health script that holds the players health
     #endregion
     #region Start
