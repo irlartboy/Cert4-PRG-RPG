@@ -28,6 +28,7 @@ public class QuestGiver : MonoBehaviour
         uI.descriptionText.text = quest.description;
         uI.experienceText.text = quest.expReward.ToString();
         uI.goldText.text = quest.goldReward.ToString();
+        
     }
 
     public void AcceptQuest()
