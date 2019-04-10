@@ -6696,10 +6696,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   showDlg: 0
   dlgText:
+  - 
+  - 
+  - 
+  - 
+  likeText:
+  - HEYYYYYYYY, OMG so good to see you!!
+  - Can you get my ring back bud?
+  - 'Some #$*!@ stole it haha, i know youll mess them up!'
+  - Bye Buddy
+  neutralText:
   - Hey Adventure!
   - I need help to recover a ring.
   - A thief stole it as is now hiding in the village ahead. Will you help me?
   - Bye
+  dislikeText:
+  - '...You again...piss off aye!'
+  - Like i said Piss off mate!
+  - You said you wont help me! has that changed???
+  - '...'
+  approval: 0
   scr: {x: 0, y: 0}
   index: 0
   optionsIndex: 2

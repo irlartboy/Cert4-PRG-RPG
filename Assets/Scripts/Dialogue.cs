@@ -5,6 +5,12 @@ public class Dialogue : MonoBehaviour
 {
     public bool showDlg;
     public string[] dlgText;
+    public string[] likeText;
+    public string[] neutralText;
+    public string[] dislikeText;
+
+    public int approval;
+
     public Vector2 scr;
     public int index, optionsIndex;
     void Start()
@@ -12,6 +18,23 @@ public class Dialogue : MonoBehaviour
 
     }
 
+    public void Update()
+    {
+        approval = Mathf.Clamp(approval, -1, 1);
+
+        switch (approval)
+        {
+            case -1:
+                dlgText = dislikeText;
+                break;
+            case 0:
+                dlgText = neutralText;
+                break;
+            case 1:
+                dlgText = likeText;
+                break;     
+        }
+    }
 
     // Code version of canvas
     void OnGUI()
@@ -41,11 +64,13 @@ public class Dialogue : MonoBehaviour
             {
                 if (GUI.Button(new Rect(12f * scr.x, 8f * scr.y, scr.x, 0.5f * scr.y), "Yes"))
                 {
+                    approval++;
                     index++;
                 }
                 if (GUI.Button(new Rect(13f * scr.x, 8f * scr.y, scr.x, 0.5f * scr.y), "No"))
                 {
-
+                    approval--;
+                    index = dlgText.Length - 1;
                 }
             }
             else
