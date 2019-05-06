@@ -188,62 +188,16 @@ public class CustomisationSet : MonoBehaviour
     }
     #endregion
 
-    public void SkinBackButton()
+    public void BackButton(string type)
     {
-        SetTexture("Skin", -1);
+        SetTexture(type, -1);
+    }
+    public void ForwardButton(string type)
+    {
+        SetTexture(type, 1);
     }
 
-    #region OnGUI
-    //Function for our GUI elements
-    //create the floats scrW and scrH that govern our 16:9 ratio
-    //create an int that will help with shuffling your GUI elements under eachother
-    #region Skin
-    //GUI button on the left of the screen with the contence <
-    //when pressed the button will run SetTexture and grab the Skin Material and move the texture index in the direction  -1
-    //GUI Box or Lable on the left of the screen with the contence Skin
-    //GUI button on the left of the screen with the contence >
-    //when pressed the button will run SetTexture and grab the Skin Material and move the texture index in the direction  1
-    //move down the screen with the int using ++ each grouping of GUI elements are moved using this
-    #endregion
-    //set up same things for Hair, Mouth and Eyes
-    #region Hair
-    //GUI button on the left of the screen with the contence <
-    //when pressed the button will run SetTexture and grab the Material and move the texture index in the direction  -1
-    //GUI Box or Lable on the left of the screen with the contence material Name
-    //GUI button on the left of the screen with the contence >
-    //when pressed the button will run SetTexture and grab the  Material and move the texture index in the direction  1
-    //move down the screen with the int using ++ each grouping of GUI elements are moved using this
-    #endregion
-    #region Mouth
-    //GUI button on the left of the screen with the contence <
-    //when pressed the button will run SetTexture and grab the Material and move the texture index in the direction  -1
-    //GUI Box or Lable on the left of the screen with the contence material Name
-    //GUI button on the left of the screen with the contence >
-    //when pressed the button will run SetTexture and grab the  Material and move the texture index in the direction  1
-    //move down the screen with the int using ++ each grouping of GUI elements are moved using this
-    #endregion
-    #region Eyes
-    //GUI button on the left of the screen with the contence <
-    //when pressed the button will run SetTexture and grab the Material and move the texture index in the direction  -1
-    //GUI Box or Lable on the left of the screen with the contence material Name
-    //GUI button on the left of the screen with the contence >
-    //when pressed the button will run SetTexture and grab the  Material and move the texture index in the direction  1
-    //move down the screen with the int using ++ each grouping of GUI elements are moved using this
-    #endregion
-    #region Random Reset
-    //create 2 buttons one Random and one Reset
-    //Random will feed a random amount to the direction 
-    //reset will set all to 0 both use SetTexture
-    //move down the screen with the int using ++ each grouping of GUI elements are moved using this
-    #endregion
-    #region Character Name and Save & Play
-    //name of our character equals a GUI TextField that holds our character name and limit of characters
-    //move down the screen with the int using ++ each grouping of GUI elements are moved using this
 
-    //GUI Button called Save and Play
-    //this button will run the save function and also load into the game level
-    #endregion
-    #endregion
 }
 public enum CharacterClass
 {
