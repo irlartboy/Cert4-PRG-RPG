@@ -1,4 +1,1 @@
-sceneSetups:
-- path: C:/Users/ollie/Desktop/Artificial-Intelligence/Artificial-Intelligence/Assets/GoHome/Scenes/GoHome.unity
-  isLoaded: 1
-  isActive: 1
+sceneSetups: []
