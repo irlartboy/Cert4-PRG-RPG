@@ -30,14 +30,13 @@ public class Interact : MonoBehaviour
                 //and that hits info is tagged NPC
                 if (hitInfo.collider.CompareTag("NPC"))
                 {
-                    Dialogue dlg = hitInfo.transform.GetComponent<Dialogue>();
+                    HCDialogue dlg = hitInfo.transform.GetComponent<HCDialogue>();
                     if (dlg != null)
                     {
                         dlg.showDlg = true;
                         Movement.canMove = false;
                         Cursor.lockState = CursorLockMode.None;
                         Cursor.visible = true;
-
                     }
                     //Debug that we hit a NPC
                     Debug.Log("NPC");
