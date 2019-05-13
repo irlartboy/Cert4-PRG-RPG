@@ -15,7 +15,7 @@ public class Interact : MonoBehaviour
     private void Update()
     {
         //if our interact key is pressed
-        if (Input.GetKeyDown("e"))
+        if (Input.GetKeyDown(KeyCode.E))
         {
             //create a ray
             Ray interact;
@@ -30,10 +30,11 @@ public class Interact : MonoBehaviour
                 //and that hits info is tagged NPC
                 if (hitInfo.collider.CompareTag("NPC"))
                 {
-                    HCDialogue dlg = hitInfo.transform.GetComponent<HCDialogue>();
+                    //  HCDialogue dlg = hitInfo.transform.GetComponent<HCDialogue>();
+                    NPCDialogue dlg = hitInfo.transform.GetComponent<NPCDialogue>();
                     if (dlg != null)
                     {
-                        dlg.showDlg = true;
+                        dlg.OpenDLGWindow();
                         Movement.canMove = false;
                         Cursor.lockState = CursorLockMode.None;
                         Cursor.visible = true;

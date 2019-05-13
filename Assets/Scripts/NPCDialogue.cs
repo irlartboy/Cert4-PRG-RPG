@@ -1,22 +1,43 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
+
+
 
 public class NPCDialogue : MonoBehaviour
 {
 
-    public List<string> dlg;
-
     public bool showDlg;
 
+    public new string name;
+
+    public DlgUI uI;
+
+    public int index;
     public string[] dlgText;
     public string[] likeText;
     public string[] neutralText;
     public string[] dislikeText;
 
     public int approval;
+
+    void Start()
+    {
+        uI.nameText.text = name;
+    }
+    public void OpenDLGWindow()
+    {
+        uI.dlgWindow.SetActive(true);
+        showDlg = true;
+        uI.dlgText.text = dlgText[index];
+
+    }
     public void NextButton()
     {
+        index++;
+        uI.dlgText.text = dlgText[index];
 
     }
     public void Update()
@@ -37,4 +58,13 @@ public class NPCDialogue : MonoBehaviour
         }
     }
 }
+[System.Serializable]
+public class DlgUI
+{
 
+    public GameObject dlgWindow;
+
+    public Text nameText;
+    public Text dlgText;
+
+}
