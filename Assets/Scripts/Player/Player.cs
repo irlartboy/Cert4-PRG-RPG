@@ -10,23 +10,29 @@ public class Player : MonoBehaviour
     public new string name;
     // public float health;
     public float maxHealth, curHealth;
-    public float  x, y, z;
-    public HealthBar health;
+    public float x, y, z;
+    public PlayerStats health;
     public CheckPoint checkPoint;
     #endregion
 
+    public void SaveBitch()
+    {
+        SaveFuntion(this);
+    }
 
     public void SaveFuntion(Player player)
     {
+        level = health.level;
+        name = health.playername;
         maxHealth = health.maxHealth;
         curHealth = health.curHealth;
-         x = player.x;
-         y = player.y;
-         z = player.z;
+        x = transform.position.x;
+        y = transform.position.y;
+        z = transform.position.z;
         Save.SaveData(this);
     }
 
-   
+
     public void LoadData()
     {
         Data data = Save.LoadData();
@@ -45,12 +51,12 @@ public class Player : MonoBehaviour
 
     private void Awake()
     {
-        LoadData();
+         LoadData();
     }
 
     private void Update()
     {
-       if (Input.GetKeyDown(KeyCode.F12))
+        if (Input.GetKeyDown(KeyCode.F12))
         {
             SaveFuntion(this);
         }

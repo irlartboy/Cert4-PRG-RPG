@@ -181,6 +181,16 @@ public class CustomisationSet : MonoBehaviour
 
     #endregion
 
+    #region Set Class
+
+    public void SetCharClass()
+    {
+         
+    }
+
+
+    #endregion
+
     #region Save
     void Save()
     {
@@ -188,6 +198,7 @@ public class CustomisationSet : MonoBehaviour
     }
     #endregion
 
+    #region AppearanceButtons
     public void BackButton(string type)
     {
         SetTexture(type, -1);
@@ -196,6 +207,10 @@ public class CustomisationSet : MonoBehaviour
     {
         SetTexture(type, 1);
     }
+    #endregion
+
+  
+
 
 
 }

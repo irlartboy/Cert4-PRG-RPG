@@ -44,14 +44,14 @@ public class PlayerStats : MonoBehaviour
     public Slider delayedExpSlider;
     public Image delayedExpFill;
 
-    /* 
+    
      public int strength;
      public int dext;
      public int constit;
      public int intel;
      public int wisd;
      public int chari;
-    */
+    
 
 
     void Update()
@@ -108,6 +108,110 @@ public class PlayerStats : MonoBehaviour
             healthFill.enabled = enabled;
             delayedHealth = curHealth;
             delayedHealthSlider.value = healthSlider.value; 
+        }
+    }
+
+    public void SetClass(string classType)
+    {
+        switch (classType)
+        {
+            default:
+            case "Barbarian":
+                strength = 1;
+                dext = 1;
+                constit = 1;
+                intel = 1;
+                wisd= 1;
+                chari = 1;
+                break;
+            case "Bard":
+                strength = 1;
+                dext = 1;
+                constit = 1;
+                intel = 1;
+                wisd= 1;
+                chari = 1;
+                break;
+            case "Cleric":
+                strength = 1;
+                dext = 1;
+                constit = 1;
+                intel = 1;
+                wisd= 1;
+                chari = 1;
+                break;
+            case "Druid":
+                strength = 1;
+                dext = 1;
+                constit = 1;
+                intel = 1;
+                wisd= 1;
+                chari = 1;
+                break;
+            case "Fighter":
+                strength = 1;
+                dext = 1;
+                constit = 1;
+                intel = 1;
+                wisd= 1;
+                chari = 1;
+                break;
+            case "Monk":
+                strength = 1;
+                dext = 1;
+                constit = 1;
+                intel = 1;
+                wisd= 1;
+                chari = 1;
+                break;
+            case "Paladian":
+                strength = 1;
+                dext = 1;
+                constit = 1;
+                intel = 1;
+                wisd= 1;
+                chari = 1;
+                break;
+            case "Ranger":
+                strength = 1;
+                dext = 1;
+                constit = 1;
+                intel = 1;
+                wisd= 1;
+                chari = 1;
+                break;
+            case "Rogue":
+                strength = 1;
+                dext = 1;
+                constit = 1;
+                intel = 1;
+                wisd= 1;
+                chari = 1;
+                break;
+            case "Sorcerer":
+                strength = 1;
+                dext = 1;
+                constit = 1;
+                intel = 1;
+                wisd= 1;
+                chari = 1;
+                break;
+            case "Warlock":
+                strength = 1;
+                dext = 1;
+                constit = 1;
+                intel = 1;
+                wisd= 1;
+                chari = 1;
+                break;
+            case "Wizard":
+                strength = 1;
+                dext = 1;
+                constit = 1;
+                intel = 1;
+                wisd= 1;
+                chari = 1;
+                break;
         }
     }
 }

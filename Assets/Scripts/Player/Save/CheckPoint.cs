@@ -53,7 +53,7 @@ public class CheckPoint : MonoBehaviour
             curCheckPoint = other.transform;
             //save our SpawnPoint as the name of the check point or float x,y,z
             Player player = this.GetComponent<Player>();
-            //player.SaveFunction(player);
+            player.SaveBitch();
         }
 
     }
