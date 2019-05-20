@@ -198,7 +198,7 @@ public class CustomisationSet : MonoBehaviour
     }
     #endregion
 
-    #region AppearanceButtons
+    #region Buttons
     public void BackButton(string type)
     {
         SetTexture(type, -1);
@@ -206,6 +206,16 @@ public class CustomisationSet : MonoBehaviour
     public void ForwardButton(string type)
     {
         SetTexture(type, 1);
+    }
+
+    public void ClassButton()
+    {
+
+    }
+
+    public void ApperanceButton()
+    {
+
     }
     #endregion
 
