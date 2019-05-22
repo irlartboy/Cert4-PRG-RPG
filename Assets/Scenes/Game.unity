@@ -623,6 +623,7 @@ GameObject:
   - component: {fileID: 66286040}
   - component: {fileID: 66286041}
   - component: {fileID: 66286036}
+  - component: {fileID: 66286037}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -778,6 +779,34 @@ MonoBehaviour:
   z: 34.7
   health: {fileID: 66286038}
   checkPoint: {fileID: 66286040}
+--- !u!114 &66286037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 66286028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 101be773a2cbcce4097540953400a3e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scr: {x: 0, y: 0}
+  scrollPos: {x: 0, y: 0}
+  sortType:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  index: 0
+  sortingType: All
+  dropLocation: {fileID: 0}
+  equippedLoaction: []
+  curWeapon: {fileID: 0}
+  curHelm: {fileID: 0}
 --- !u!114 &66286038
 MonoBehaviour:
   m_ObjectHideFlags: 0

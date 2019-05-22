@@ -10,12 +10,12 @@ public static class CustomSave
         string path = Application.persistentDataPath + "/player.custom";
         FileStream stream = new FileStream(path, FileMode.Create);
 
-        CustomData data = new CustomData();
+        //CustomData data = new CustomData();
 
-        formatter.Serialize(stream, data);
+        //formatter.Serialize(stream, data);
         stream.Close();
     }
-    public static CustomData Load()
+   /* public static CustomData Load()
     {
         string path = Application.persistentDataPath + "/player.custom";
         if (File.Exists(path))
@@ -30,5 +30,5 @@ public static class CustomSave
            Debug.LogError("Save file not found in" + path)
            return null;
         }
-    }
+    } */
 }
