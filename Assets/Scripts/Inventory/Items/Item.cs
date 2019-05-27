@@ -106,7 +106,7 @@ public enum ItemType
     Quest, 
     Money,
     Ingredient, 
-    Poitions,
+    Potions,
     Scrolls
 }
 #endregion

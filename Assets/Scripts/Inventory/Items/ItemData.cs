@@ -228,7 +228,7 @@ public static class ItemData
                 _description = "A small health potion";
                 _icon = "Potions/S_Health_Icon";
                 _mesh = "Potions/S_Health_Mesh";
-                _type = ItemType.Poitions;
+                _type = ItemType.Potions;
                 _heal = 20;
                 _amount = 1;
                 break;
@@ -238,7 +238,7 @@ public static class ItemData
                 _description = "A medium health potion";
                 _icon = "Potions/M_Health_Icon";
                 _mesh = "Potions/M_Health_Mesh";
-                _type = ItemType.Poitions;
+                _type = ItemType.Potions;
                 _heal = 50;
                 _amount = 1;
                 break;
@@ -248,7 +248,7 @@ public static class ItemData
                 _description = "A large health potion";
                 _icon = "Potions/L_Health_Icon";
                 _mesh = "Potions/L_Health_Mesh";
-                _type = ItemType.Poitions;
+                _type = ItemType.Potions;
                 _heal = 100;
                 _amount = 1;
                 break;

@@ -26,6 +26,7 @@ public class Inventory : MonoBehaviour
      */
     public GameObject curWeapon;
     public GameObject curHelm;
+    public PlayerStats health;
     #endregion
     private void Start()
     {
@@ -36,8 +37,6 @@ public class Inventory : MonoBehaviour
         inv.Add(ItemData.CreateItem(600));
         inv.Add(ItemData.CreateItem(3));
         inv.Add(ItemData.CreateItem(2));
-       
-
         for (int i = 0; i < inv.Count; i++)
         {
             Debug.Log(inv[i].Name);
@@ -167,6 +166,162 @@ public class Inventory : MonoBehaviour
                 GUI.EndScrollView();
             }
         }
+    }
+
+    void DisplayItem(Item SelectedItem)
+    {
+        switch (selectedItem.Type)
+        {
+            case ItemType.Food:
+                GUI.Box(new Rect(8 * scr.x, 5 * scr.y, 8 * scr.x, 3 * scr.y),SelectedItem.Name+"\n"+SelectedItem.Description+"\nValue:"+SelectedItem.Value+"\nHeal:"+SelectedItem.Heal +"\nAmount:"+SelectedItem.Amount);
+                if (health.curHealth < health.maxHealth)
+                {
+                    if (GUI.Button(new Rect(15*scr.x,8.75f*scr.y,scr.x,0.25f*scr.y),"Eat"))
+                    {
+                        health.curHealth += selectedItem.Heal;
+                        DepleteAmount();
+                    }
+                }
+                if (GUI.Button (new Rect(14* scr.x,8.75f *scr.y,scr.x,0.25f *scr.y),"Discard"))
+                {
+                    Discard();
+                }
+                break;
+            case ItemType.Weapon:
+                GUI.Box(new Rect(8 * scr.x, 5 * scr.y, 8 * scr.x, 3 * scr.y), SelectedItem.Name + "\n" + SelectedItem.Description + "\nValue:" + SelectedItem.Value + "\nDamage:" + SelectedItem.Heal + "\nAmount:" + SelectedItem.Amount);
+                if (curWeapon == null || selectedItem.Mesh.name != curWeapon.name)
+                {
+                    if (GUI.Button(new Rect(15 * scr.x, 8.75f * scr.y, scr.x, 0.25f * scr.y), "Equip"))
+                    {
+                        if (curWeapon != null)
+                        {
+                            Destroy(curWeapon);
+                        }
+                        curWeapon = Instantiate(selectedItem.Mesh, equippedLoaction[0]);
+                        if (curWeapon.GetComponent<ItemHandler>() != null)
+                        {
+                            curWeapon.GetComponent<ItemHandler>().enabled = false;
+                        }
+                        curWeapon.name = selectedItem.Mesh.name;
+                    }
+                }
+                if (GUI.Button(new Rect(14 * scr.x, 8.75f * scr.y, scr.x, 0.25f * scr.y), "Discard"))
+                {
+                    if (curWeapon != null && selectedItem.Mesh.name == curWeapon.name)
+                    {
+                        Destroy(curWeapon);
+                    }
+                    Discard();
+                }
+                break;
+            case ItemType.Apparel:
+                GUI.Box(new Rect(8 * scr.x, 5 * scr.y, 8 * scr.x, 3 * scr.y), SelectedItem.Name + "\n" + SelectedItem.Description + "\nValue:" + SelectedItem.Value + "\nArmour" + SelectedItem.Heal + "\nAmount:" + SelectedItem.Amount);
+                if (curHelm == null || selectedItem.Mesh.name != curHelm.name)
+                {
+                    if (GUI.Button(new Rect(15 * scr.x, 8.75f * scr.y, scr.x, 0.25f * scr.y), "Equip"))
+                    {
+                        if (curHelm != null)
+                        {
+                            Destroy(curHelm);
+                        }
+                        curHelm = Instantiate(selectedItem.Mesh, equippedLoaction[1]);
+                        if (curHelm.GetComponent<ItemHandler>() != null)
+                        {
+                            curHelm.GetComponent<ItemHandler>().enabled = false;
+                        }
+                        curHelm.name = selectedItem.Mesh.name;
+                    }
+                }
+                if (GUI.Button(new Rect(14 * scr.x, 8.75f * scr.y, scr.x, 0.25f * scr.y), "Discard"))
+                {
+                    if (curHelm != null && selectedItem.Mesh.name == curHelm.name)
+                    {
+                        Destroy(curHelm);
+                    }
+                    Discard();
+                }
+                break;
+            case ItemType.Crafting:
+                GUI.Box(new Rect(8 * scr.x, 5 * scr.y, 8 * scr.x, 3 * scr.y), selectedItem.Name + "\n" + selectedItem.Description + "\nValue: " + selectedItem.Value + "\nAmount: " + selectedItem.Amount);
+                if (GUI.Button(new Rect(15 * scr.x, 8.75f * scr.y, scr.x, 0.25f * scr.y), "Use"))
+                {
+                    health.curHealth += selectedItem.Heal;
+                    DepleteAmount();
+                }
+
+                if (GUI.Button(new Rect(14 * scr.x, 8.75f * scr.y, scr.x, 0.25f * scr.y), "Discard"))
+                {
+                    Discard();
+                }
+                break;
+            case ItemType.Quest:
+                break;
+            case ItemType.Ingredient:
+                GUI.Box(new Rect(8 * scr.x, 5 * scr.y, 8 * scr.x, 3 * scr.y), selectedItem.Name + "\n" + selectedItem.Description + "\nValue: " + selectedItem.Value + "\nAmount: " + selectedItem.Amount);
+                if (health.curHealth < health.maxHealth)
+                {
+                    if (GUI.Button(new Rect(15 * scr.x, 8.75f * scr.y, scr.x, 0.25f * scr.y), "Use"))
+                    {
+                        health.curHealth += selectedItem.Heal;
+                        DepleteAmount();
+                    }
+                }
+                if (GUI.Button(new Rect(14 * scr.x, 8.75f * scr.y, scr.x, 0.25f * scr.y), "Discard"))
+                {
+                    Discard();
+                }
+                break;
+            case ItemType.Potions:
+                GUI.Box(new Rect(8 * scr.x, 5 * scr.y, 8 * scr.x, 3 * scr.y), selectedItem.Name + "\n" + selectedItem.Description + "\nValue: " + selectedItem.Value + "\nHeal: " + selectedItem.Heal + "\nAmount: " + selectedItem.Amount);
+                if (health.curHealth < health.maxHealth)
+                {
+                    if (GUI.Button(new Rect(15 * scr.x, 8.75f * scr.y, scr.x, 0.25f * scr.y), "Drink"))
+                    {
+                        health.curHealth += selectedItem.Heal;
+                        DepleteAmount();
+                    }
+                }
+                if (GUI.Button(new Rect(14 * scr.x, 8.75f * scr.y, scr.x, 0.25f * scr.y), "Discard"))
+                {
+                    Discard();
+                }
+                break;
+            case ItemType.Scrolls:
+                GUI.Box(new Rect(8 * scr.x, 5 * scr.y, 8 * scr.x, 3 * scr.y), selectedItem.Name + "\n" + selectedItem.Description + "\nValue: " + selectedItem.Value + "\nAmount: " + selectedItem.Amount);
+                if (health.curHealth < health.maxHealth)
+                {
+                    if (GUI.Button(new Rect(15 * scr.x, 8.75f * scr.y, scr.x, 0.25f * scr.y), "Read"))
+                    {
+                        health.curHealth += selectedItem.Heal;
+                        DepleteAmount();
+                    }
+                }
+                if (GUI.Button(new Rect(14 * scr.x, 8.75f * scr.y, scr.x, 0.25f * scr.y), "Discard"))
+                {
+                    Discard();
+                }
+                break;
+        }
+    }
+    private void DepleteAmount()
+    {
+        if (selectedItem.Amount > 1)
+        {
+            selectedItem.Amount--;
+        }
+        else
+        {
+            inv.Remove(selectedItem);
+            selectedItem = null;
+        }
+        return;
+    }
+    private void Discard()
+    {
+        GameObject clone = Instantiate(selectedItem.Mesh, dropLocation.position, Quaternion.identity);
+        clone.AddComponent<Rigidbody>().useGravity = true;
+        clone.AddComponent<BoxCollider>();
+        DepleteAmount();
     }
     private void OnGUI()
     {
