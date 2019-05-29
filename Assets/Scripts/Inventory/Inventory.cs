@@ -168,12 +168,12 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    void DisplayItem(Item SelectedItem)
+    void DisplayItem()
     {
         switch (selectedItem.Type)
         {
             case ItemType.Food:
-                GUI.Box(new Rect(8 * scr.x, 5 * scr.y, 8 * scr.x, 3 * scr.y),SelectedItem.Name+"\n"+SelectedItem.Description+"\nValue:"+SelectedItem.Value+"\nHeal:"+SelectedItem.Heal +"\nAmount:"+SelectedItem.Amount);
+                GUI.Box(new Rect(8 * scr.x, 5 * scr.y, 8 * scr.x, 3 * scr.y),selectedItem.Name+"\n"+selectedItem.Description+"\nValue:"+selectedItem.Value+"\nHeal:"+selectedItem.Heal +"\nAmount:"+selectedItem.Amount);
                 if (health.curHealth < health.maxHealth)
                 {
                     if (GUI.Button(new Rect(15*scr.x,8.75f*scr.y,scr.x,0.25f*scr.y),"Eat"))
@@ -188,7 +188,7 @@ public class Inventory : MonoBehaviour
                 }
                 break;
             case ItemType.Weapon:
-                GUI.Box(new Rect(8 * scr.x, 5 * scr.y, 8 * scr.x, 3 * scr.y), SelectedItem.Name + "\n" + SelectedItem.Description + "\nValue:" + SelectedItem.Value + "\nDamage:" + SelectedItem.Heal + "\nAmount:" + SelectedItem.Amount);
+                GUI.Box(new Rect(8 * scr.x, 5 * scr.y, 8 * scr.x, 3 * scr.y), selectedItem.Name + "\n" + selectedItem.Description + "\nValue:" + selectedItem.Value + "\nDamage:" + selectedItem.Heal + "\nAmount:" + selectedItem.Amount);
                 if (curWeapon == null || selectedItem.Mesh.name != curWeapon.name)
                 {
                     if (GUI.Button(new Rect(15 * scr.x, 8.75f * scr.y, scr.x, 0.25f * scr.y), "Equip"))
@@ -215,7 +215,7 @@ public class Inventory : MonoBehaviour
                 }
                 break;
             case ItemType.Apparel:
-                GUI.Box(new Rect(8 * scr.x, 5 * scr.y, 8 * scr.x, 3 * scr.y), SelectedItem.Name + "\n" + SelectedItem.Description + "\nValue:" + SelectedItem.Value + "\nArmour" + SelectedItem.Heal + "\nAmount:" + SelectedItem.Amount);
+                GUI.Box(new Rect(8 * scr.x, 5 * scr.y, 8 * scr.x, 3 * scr.y), selectedItem.Name + "\n" + selectedItem.Description + "\nValue:" + selectedItem.Value + "\nArmour" + selectedItem.Heal + "\nAmount:" + selectedItem.Amount);
                 if (curHelm == null || selectedItem.Mesh.name != curHelm.name)
                 {
                     if (GUI.Button(new Rect(15 * scr.x, 8.75f * scr.y, scr.x, 0.25f * scr.y), "Equip"))
@@ -340,6 +340,7 @@ public class Inventory : MonoBehaviour
             if (selectedItem != null)
             {
                 GUI.DrawTexture(new Rect(11 * scr.x, 1.5f * scr.y, 2 * scr.x, 2 * scr.y),selectedItem.Icon);
+                DisplayItem();
             }
         }
     }
