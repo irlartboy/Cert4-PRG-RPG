@@ -24,7 +24,7 @@ MonoBehaviour:
   m_MinSize: {x: 881, y: 498}
   m_MaxSize: {x: 16006, y: 14048}
   vertical: 0
-  controlID: 2550
+  controlID: 117
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -129,7 +129,7 @@ MonoBehaviour:
   m_MinSize: {x: 604, y: 498}
   m_MaxSize: {x: 12004, y: 14048}
   vertical: 1
-  controlID: 2503
+  controlID: 118
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -155,7 +155,7 @@ MonoBehaviour:
   m_MinSize: {x: 604, y: 224}
   m_MaxSize: {x: 12004, y: 4024}
   vertical: 0
-  controlID: 2482
+  controlID: 119
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -210,10 +210,10 @@ MonoBehaviour:
   m_PersistentViewDataDictionary: {fileID: 0}
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 77}
+      scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 28c3ffff28f6ffff30f6ffff32f6ffff3af6ffff3cf6ffff42f6ffff44f6ffff4ef6ffff56f6ffff82f6ffff86f6ffffa6f6ffffaaf6ffffd6fbffff16110000
+      m_ExpandedIDs: 64ebffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -256,8 +256,8 @@ MonoBehaviour:
     y: 0
     width: 439
     height: 552
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 204, y: 224}
+  m_MaxSize: {x: 4004, y: 4024}
   m_ActualView: {fileID: 8}
   m_Panes:
   - {fileID: 8}
@@ -327,13 +327,13 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: -0.013669238, y: -0.9859244, z: 0.13121368, w: -0.102709375}
+    m_Target: {x: 0.013669238, y: 0.9859244, z: -0.13121368, w: 0.102709375}
     speed: 2
-    m_Value: {x: -0.013669238, y: -0.9859244, z: 0.13121368, w: -0.102709375}
+    m_Value: {x: 0.013669238, y: 0.9859244, z: -0.13121368, w: 0.102709375}
   m_Size:
-    m_Target: 1.3883163
+    m_Target: 9.330431
     speed: 2
-    m_Value: 1.3883163
+    m_Value: 9.330431
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -454,8 +454,8 @@ MonoBehaviour:
     y: 0
     width: 561
     height: 552
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 204, y: 224}
+  m_MaxSize: {x: 4004, y: 4024}
   m_ActualView: {fileID: 2}
   m_Panes:
   - {fileID: 2}
@@ -527,20 +527,20 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts/Player
+    - Assets
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scripts/Player
+  - Assets
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\oliver.king\Documents\GitHub\Cert4-PRG-RPG
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 282}
-    m_SelectedIDs: 6e0c0000
-    m_LastClickedID: 3182
-    m_ExpandedIDs: 000000004e0a0000780a0000100b0000740b00006e0c0000ba0d0000000e00006410000098360000268f000000ca9a3b
+    scrollPos: {x: 0, y: 0}
+    m_SelectedIDs: 44330000
+    m_LastClickedID: 13124
+    m_ExpandedIDs: 000000006c330000383400001235000072360000d83600006441000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -568,7 +568,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000004e0a0000780a0000100b0000740b00006e0c0000ba0d0000000e0000641000009836000000ca9a3b
+    m_ExpandedIDs: 00000000443300006c330000e633000038340000123500004036000072360000d83600007238000064410000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -593,9 +593,9 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: aaf6ffff
-    m_LastClickedInstanceID: -2390
-    m_HadKeyboardFocusLastEvent: 1
+    m_SelectedInstanceIDs: 
+    m_LastClickedInstanceID: 0
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c62300004a3400008c480000f22c0000d23500009a4b0000880f0000080e0000000000006c290000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -677,7 +677,7 @@ MonoBehaviour:
   m_PersistentViewDataDictionary: {fileID: 0}
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 4374
+  m_LastSelectedObjectID: -2390
 --- !u!114 &16
 MonoBehaviour:
   m_ObjectHideFlags: 52
